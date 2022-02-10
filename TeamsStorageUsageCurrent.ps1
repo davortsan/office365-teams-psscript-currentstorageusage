@@ -2,11 +2,7 @@
 Import-Module ExchangeOnlineManagement
 Import-Module Microsoft.Online.SharePoint.PowerShell
 
-
-
 $AdminSiteURL = "https://<tenant_name>-admin.sharepoint.com"
-$result = New-Object -TypeName 'System.Collections.ArrayList';
-[System.Collections.ArrayList]$result= @()
 
 $cred = Get-Credential
 
