@@ -2,7 +2,7 @@
 Import-Module ExchangeOnlineManagement
 Import-Module Microsoft.Online.SharePoint.PowerShell
 
-$AdminSiteURL = "https://sspajuntadeandalucia-admin.sharepoint.com"
+$AdminSiteURL = "https://<tenant_name>-admin.sharepoint.com"
 
 $cred = Get-Credential
 
