@@ -19,16 +19,15 @@ foreach ($actual in $Teams)
     if ($SPOSite.SharePointSiteUrl -ne $null)
     { 
         $data = Get-SPOSite $SPOSite.SharePointSiteUrl | select Title, StorageUsageCurrent
-
-        Write-Host $data.Title';'$data.StorageUsageCurrent -ForegroundColor Yellow
     }
 
     $TeamUsers = Get-TeamUser -GroupId $actual.GroupId | select user
 
     foreach ($user in $TeamUsers)
     {
-        $user.user.Split('@')[0]
+        $line = $data.Title+';'+ $data.StorageUsageCurrent+';'+$user.user.Split('@')[0]
 
+        Add-Content -Path "C:\temp\TeamsUsageWithMembers.txt" $line
     }
 }
 
